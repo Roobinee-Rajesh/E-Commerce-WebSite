@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Cart</title>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <!-- navbar begin -->
+    <nav class="navbar bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../Admin/index.html">Shopify</a>
+        <div class="d-flex justify-content-evenly w-25">
+          <a class="nav-link" href="../Admin/AddProduct.html">Add Product</a>
+          <a class="nav-link" href="../Admin/orders.html">Order</a>
+          <button class="btn btn-outline-danger" type="submit">Log out</button>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar end -->
+
+    <p class="fs-1 text-center  ">Welcome Admin!!</p>
+
+    <!-- table start -->
+
+    <table class="container table table-striped w-50">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Price</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Top</td>
+          <td>White</td>
+          <td>₹500</td>
+          <td class="d-flex gap-2">
+            <button type="button" class="btn btn-success">Approve</button>
+            <button type="button" class="btn btn-danger">Reject</button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jean</td>
+          <td>blue</td>
+          <td>₹1600</td>
+          <td class="d-flex gap-2">
+            <button type="button" class="btn btn-success">Approve</button>
+            <button type="button" class="btn btn-danger">Reject</button>
+          </td>
+        </tr>
+
+        <tr>
+            <th scope="row">3</th>
+            <td>Shawl</td>
+            <td>Pink</td>
+            <td>₹160</td>
+            <td class="d-flex gap-2">
+              <button type="button" class="btn btn-success">Approve</button>
+              <button type="button" class="btn btn-danger">Reject</button>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+    <!-- table end -->
+  </body>
+</html>
