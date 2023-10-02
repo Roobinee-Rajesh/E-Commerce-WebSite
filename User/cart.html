@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Index</title>
+    <title>User Cart</title>
     <link rel="stylesheet" href="/CSS/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
@@ -23,36 +23,34 @@
     <!-- navbar begin -->
     <nav class="navbar bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="../Admin/index.html">Shopify</a>
+        <a class="navbar-brand" href="/User/index.html">Shopify</a>
         <div class="d-flex justify-content-evenly w-25">
-          <a class="nav-link" href="../Admin/AddProduct.html">Add Product</a>
-          <a class="nav-link" href="../Admin/orders.html">Order</a>
+          <a class="nav-link" href="/User/cart.html" id="cartCount">Cart</a>
+          <a class="nav-link" href="/User/order.html">Order</a>
           <button class="btn btn-outline-danger"><a href="/User/login.html"> Log Out</a></button>
         </div>
       </div>
     </nav>
     <!-- navbar end -->
-    <p class="fs-1 text-center pb-3">Welcome Admin!!</p>
-
-    <!-- <div class="d-flex  justify-content-end pe-5">
-      
-    <button type="button" class="btn btn-primary">Add Product</button>
-    </div> -->
-
-    <!-- table start -->
-
-    <table class="container table table-striped w-75">
-      <thead>
-        <tr>
-          <th scope="col">Image</th>
-          <th scope="col">Name</th>
-          <th scope="col">Description</th>
-          <th scope="col">Price</th>
-          <th scope="col">Action</th>
-        </tr>
-      </thead>
-      <tbody id="adminIndexProducts"></tbody>
-    </table>
-    <!-- table end -->
+      <div id="table">
+        <table class="container table table-striped w-50 pb-50">
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Price</th>
+              <th scope="col">Total Price</th>
+            </tr>
+          </thead>
+          <tbody id="cartTableBody"></tbody>
+        </table>
+        <p class="fs-5 text-center" id="total">Total </p>
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-primary" onclick="checkOut()">
+            Checkout
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

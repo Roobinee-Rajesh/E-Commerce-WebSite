@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="/CSS/loginstyle.css" />
+    <script src="/script.js" defer></script>
+    <style>
+      form {
+        width: 25rem;
+        height: 40rem;
+        display: flex;
+        flex-direction: column;
+        background-color: reb(255, 255, 255, 0, 06);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        border-radius: 30px;
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <h3>REGISTER</h3>
+      <div>
+        <label for="email">Email address</label>
+        <input type="email" id="email" />
+        <p id="error1"></p>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" />
+        <p id="error2"></p>
+      </div>
+      <div>
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" />
+        <p id="error3"></p>
+      </div>
+      <p id="error"></p>
+      <button id="createButton">Create</button>
+      <p id="p1">Alreay have an account? <a href="/User/login.html">SignIn</a></p>
+    </form>
+
+  </body>
+</html>
