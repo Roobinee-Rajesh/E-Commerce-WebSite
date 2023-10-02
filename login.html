@@ -5,15 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <link rel="stylesheet" href=".../../CSS/loginstyle.css" />
+    <script src="./script.js" defer></script>
   </head>
   <body>
     <form>
-      <h1>LOGIN</h1>
-      <lable>Username</lable>
-      <input type="text" />
-      <lable>Password</lable>
-      <input type="password" />
-      <button><a href="index.html" style="color: rgb(7, 7, 7); text-decoration: none;">Login</a></button>
+      <h3>LOGIN</h3>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email">
+        <p id="error" class="text-danger"></p>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password">
+        <p id="error" class="text-danger"></p>
+      </div>
+      <button onclick="signIn()">Login</button>
       <p>Don't have an account? <a href="Register.html">SignUp</a></p>
     </form>
   </body>

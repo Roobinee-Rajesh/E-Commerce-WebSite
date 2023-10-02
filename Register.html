@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
-    <link rel="stylesheet" href=".../../CSS/loginstyle.css" />
-    <style>
+    <link rel="stylesheet" href="./CSS/loginstyle.css" />
+    <script src="./script.js" defer></script>
+   <style>
       form {
         width: 25rem;
-        height: 35rem;
+        height: 40rem;
         display: flex;
         flex-direction: column;
         background-color: reb(255, 255, 255, 0, 06);
@@ -18,17 +19,27 @@
       }
     </style>
   </head>
+  
   <body>
     <form>
-      <h1>REGISTER</h1>
-      <lable>Username</lable>
-      <input type="text" />
-      <lable>Password</lable>
-      <input type="password" />
-      <lable>Confirm Password</lable>
-      <input type="password" />
-      <button><a href="./login.html">Create</a></button>
-      <p>Already have an account? <a href="login.html">Sign-in</a></p>
+      <h3>REGISTER</h3>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email">
+        <p id="error" class="text-danger"></p>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password">
+        <p id="error" class="text-danger"></p>
+      </div>
+      <div class="mb-3">
+        <label for="confirmPassword" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="confirmPassword">
+        <p id="error" class="text-danger"></p>
+      </div>
+      <button type="submit" class="btn btn-primary" onclick="signUp()">Sign Up</button>
+      <p>Already have an account? <a href="./login.html">Sign-in</a></p>
     </form>
   </body>
 </html>
