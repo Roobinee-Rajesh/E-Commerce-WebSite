@@ -19,10 +19,9 @@
     ></script>
     <script src="/Script/script.js" defer></script>
     <script src="/Script/AddProduct.js" defer></script>
-   
+    <script src="/Script/AdminIndex.js" defer></script>
   </head>
   <body>
-    
     <!-- navbar begin -->
     <nav class="navbar bg-light">
       <div class="container-fluid">
@@ -30,7 +29,9 @@
         <div class="d-flex justify-content-evenly w-25">
           <a class="nav-link" href="/Admin/AddProduct.html">Add Product</a>
           <a class="nav-link" href="/Admin/orders.html">Order</a>
-          <button class="btn btn-outline-danger" onclick="SignOut()">Log Out</button>
+          <button class="btn btn-outline-danger" onclick="SignOut()">
+            Log Out
+          </button>
         </div>
       </div>
     </nav>
@@ -39,9 +40,11 @@
       <p class="fs-1 text-center" id="title">Add Product</p>
       <!-- Form start -->
       <form class="container d-flex flex-column align-items-center">
-        <input type="hidden" id="id"></input>
+        <input type="hidden" id="id" />
         <div class="mb-3">
-          <label for="productName" class="form-label" id="title">Product Name</label>
+          <label for="productName" class="form-label" id="title"
+            >Product Name</label
+          >
           <input
             type="text"
             class="form-control"
@@ -76,10 +79,35 @@
           />
         </div>
         <p id="error" class="text-danger"></p>
-        <button type="submit" class="btn btn-primary" id="btn" onclick="addProduct()">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          id="btn"
+          onclick="addProduct()"
+        >
           Add Product
         </button>
       </form>
-    </div >
+
+      <!-- toast message -->
+      <div
+        id="toast"
+        class="toast position-fixed text-bg-success border-0"
+        style="top: 60px; right: 20px"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body" id="toastMessage"></div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

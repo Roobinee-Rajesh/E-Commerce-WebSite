@@ -66,6 +66,11 @@ const loadUserCart = () => {
       const userId = parseInt(sessionStorage.getItem("userId"));
       const userCart = cart.filter((c) => c.userId === userId);
 
+      if(userCart.length===0)
+      {
+        document.getElementById("userCartBtn").disabled = true;
+      }
+      else{
       let body = "";
       let total = 0;
       for (let cartItem of userCart) {
@@ -80,7 +85,8 @@ const loadUserCart = () => {
       }
       cartTableRef.innerHTML = body;
       totalRef.innerText = `Total - ₹ ${total}`;
-    } else {
+    } }
+    else {
       location.href = "/Login/login.html";
     }
   }
