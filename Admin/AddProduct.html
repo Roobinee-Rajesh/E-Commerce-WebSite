@@ -17,30 +17,31 @@
       crossorigin="anonymous"
       defer
     ></script>
-    <script src="/script.js" defer></script>
+    <script src="/Script/script.js" defer></script>
+    <script src="/Script/AddProduct.js" defer></script>
    
   </head>
   <body>
     
     <!-- navbar begin -->
-    <nav class="navbar">
+    <nav class="navbar bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="/Admin/index.html">Shopify</a>
         <div class="d-flex justify-content-evenly w-25">
           <a class="nav-link" href="/Admin/AddProduct.html">Add Product</a>
           <a class="nav-link" href="/Admin/orders.html">Order</a>
-          <button class="btn btn-outline-danger"><a href="/User/login.html"> Log Out</a></button>
+          <button class="btn btn-outline-danger" onclick="SignOut()">Log Out</button>
         </div>
       </div>
     </nav>
     <!-- navbar end -->
     <div class="pt-5">
-      <p class="fs-1 text-center">Add Product</p>
+      <p class="fs-1 text-center" id="title">Add Product</p>
       <!-- Form start -->
       <form class="container d-flex flex-column align-items-center">
         <input type="hidden" id="id"></input>
         <div class="mb-3">
-          <label for="productName" class="form-label">Product Name</label>
+          <label for="productName" class="form-label" id="title">Product Name</label>
           <input
             type="text"
             class="form-control"
@@ -74,7 +75,8 @@
             id="image"
           />
         </div>
-        <button type="submit" class="btn btn-primary" onclick="addProduct()">
+        <p id="error" class="text-danger"></p>
+        <button type="submit" class="btn btn-primary" id="btn" onclick="addProduct()">
           Add Product
         </button>
       </form>

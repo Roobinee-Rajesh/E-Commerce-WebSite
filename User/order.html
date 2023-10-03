@@ -17,7 +17,9 @@
       crossorigin="anonymous"
       defer
     ></script>
-    <script src="/script.js" defer></script>
+    <script src="/Script/script.js" defer></script>
+    <script src="/Script/UserOrder.js" defer></script>
+    <script src="/Script/UserCart.js" defer></script>
   </head>
   <body>
     <!-- navbar begin -->
@@ -25,9 +27,9 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="/User/index.html">Shopify</a>
         <div class="d-flex justify-content-evenly w-25">
-          <a class="nav-link" href="/User/cart.html">Cart</a>
+          <a class="nav-link" href="/User/cart.html" id="cartCount">Cart</a>
           <a class="nav-link" href="/User/order.html">Order</a>
-          <button class="btn btn-outline-danger" type="submit"><a href="/User/login.html">Log Out</a></button>
+          <button class="btn btn-outline-danger" onclick="SignOut()">Log Out</button>
         </div>
       </div>
     </nav>
