@@ -10,6 +10,7 @@ const addProduct = () => {
   const errorRef = document.getElementById("error");
   const toastRef = document.getElementById("toast");
   const toastMessageRef = document.getElementById("toastMessage");
+  const toastBtnRef=document.getElementById("toastBtnRef");
   let products = JSON.parse(localStorage.getItem("products"));
 let id = idRef.value;
 if (id) {
@@ -24,15 +25,15 @@ if (id) {
     price: priceRef.value,
     thumbnail: imageRef.value,
   });
-
+  localStorage.setItem("products", JSON.stringify(products));
   toastMessageRef.innerText = "Product updated successfully!!!";
   toastRef.classList.add("fade", "show");
 
       setTimeout(() => {
         toastRef.classList.remove("fade", "show");
+        location.href = "/Admin/index.html";
       }, 2000);
-  localStorage.setItem("products", JSON.stringify(products));
-      location.href = "/Admin/index.html";
+
 }
 else{
     if (
@@ -48,14 +49,15 @@ else{
         price: priceRef.value,
         thumbnail: imageRef.value,
       });
+      localStorage.setItem("products", JSON.stringify(products));
       toastMessageRef.innerText = "Product added successfully!!!";
       toastRef.classList.add("fade", "show");
 
       setTimeout(() => {
+        location.href = "/Admin/AddProduct.html";
         toastRef.classList.remove("fade", "show");
       }, 2000);
-      localStorage.setItem("products", JSON.stringify(products));
-      location.href = "/Admin/AddProduct.html";
+      
     } else {
       errorRef.innerText = "Fields are empty";
     }
