@@ -34,25 +34,22 @@
       </div>
     </nav>
     <p class="fs-1 text-center">Cart</p>
+
+    <div id="emptyCart" style="padding-left: 20px;">
+    </div><br>
     <!-- navbar end -->
       <div id="table">
         <table class="container table table-striped w-50 pb-50">
-          <thead>
-            <tr>
-              <th scope="col">Product</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Price</th>
-              <th scope="col">Total Price</th>
-            </tr>
+          <thead id="cartTableHead">
+          
           </thead>
           <tbody id="cartTableBody"></tbody>
         </table>
-        <p class="fs-5 text-center" id="total">Total </p>
-        <div class="d-flex justify-content-center">
-          <button class="btn btn-primary" id="userCartBtn" onclick="checkOut()">
-            Checkout
-          </button>
+        <div id="cartTableEnd">
+      
         </div>
+      </div>
+        
       </div>
     </div>
   </body>

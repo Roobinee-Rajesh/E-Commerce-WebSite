@@ -16,19 +16,19 @@ const addToCart = (id) => {
       (c) => c.userId === parseInt(userId) && c.id === parseInt(id)
     );
     if (cartProduct) {
-        cart = cart.map((c) => {
-            if (c.id === parseInt(id) && c.userId === parseInt(userId)) {
-              return { ...c, count: c.count + 1 };
-            } else {
-              return c;
-            }
-          });
+      cart = cart.map((c) => {
+        if (c.id === parseInt(id) && c.userId === parseInt(userId)) {
+          return { ...c, count: c.count + 1 };
+        } else {
+          return c;
+        }
+      });
     } else {
       cart.push({ userId: parseInt(userId), count: 1, ...product });
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
-      updateCartCount();
+    updateCartCount();
   }
 };
 
@@ -54,10 +54,11 @@ const updateCartCount = () => {
 
 // loadCartPage
 const loadUserCart = () => {
-  const cartTableRef = document.getElementById("cartTableBody");
-  const totalRef = document.getElementById("total");
+  const cartTableBodyRef = document.getElementById("cartTableBody");
+  const cartTableHeadRef = document.getElementById("cartTableHead");
+  const cartTableEndRef = document.getElementById("cartTableEnd");
   const emptyCartRef = document.getElementById("emptyCart");
-  const tableRef = document.getElementById("table");
+  const totalRef = document.getElementById("total");
 
   if (localStorage.getItem("cart")) {
     const cart = JSON.parse(localStorage.getItem("cart"));
@@ -66,27 +67,45 @@ const loadUserCart = () => {
       const userId = parseInt(sessionStorage.getItem("userId"));
       const userCart = cart.filter((c) => c.userId === userId);
 
-      if(userCart.length===0)
-      {
-        window.getElementById("userCartBtn").disabled = true;
-      }
-      else{
-      let body = "";
-      let total = 0;
-      for (let cartItem of userCart) {
-        total = total + parseInt(cartItem.count) * parseInt(cartItem.price);
-        const count = cartItem.count * cartItem.price;
-        body += `<tr>
+      if (userCart.length === 0 || userCart.length === NULL) {
+        let empty = "";
+        empty = `<div class="d-flex flex-column align-items-center"><h3>Cart is empty</h3>
+        <button style="background-color:blue; color:white; width:200px"><a style="color:white; text-decoration:none" href="/E-Commerce-WebSite/User/index.html">Continue Shopping</a></button></div>`;
+
+        emptyCartRef.innerHTML = empty;
+      } else {
+        let body = "";
+        let head = "";
+        let end = "";
+        let total = 0;
+        head = `<tr>
+        <th scope="col">Product</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Total Price</th>
+      </tr>`;
+        for (let cartItem of userCart) {
+          total = total + parseInt(cartItem.count) * parseInt(cartItem.price);
+          const count = cartItem.count * cartItem.price;
+
+          body += `<tr>
                   <td>${cartItem.title}</td>
                   <td>${cartItem.count}</td>
                   <td>${cartItem.price}</td>
                   <td>₹ ${count}</td>
                 </tr>`;
+        }
+        end += `<p class="fs-5 text-center" id="total">Total-₹ ${total} </p>
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-primary" id="userCartBtn" onclick="checkOut()">
+            Checkout
+          </button>`;
+        cartTableHeadRef.innerHTML = head;
+        cartTableBodyRef.innerHTML = body;
+        cartTableEndRef.innerHTML = end;
+        // totalRef.innerText = `Total - ₹ ${total}`;
       }
-      cartTableRef.innerHTML = body;
-      totalRef.innerText = `Total - ₹ ${total}`;
-    } }
-    else {
+    } else {
       location.href = "/E-Commerce-WebSite/Login/login.html";
     }
   }
