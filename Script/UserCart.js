@@ -68,7 +68,7 @@ const loadUserCart = () => {
 
       if(userCart.length===0)
       {
-        document.getElementById("userCartBtn").disabled = true;
+        window.getElementById("userCartBtn").disabled = true;
       }
       else{
       let body = "";
