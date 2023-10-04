@@ -31,7 +31,7 @@ if (id) {
 
       setTimeout(() => {
         toastRef.classList.remove("fade", "show");
-        location.href = "/Admin/index.html";
+        location.href = "/E-Commerce-WebSite/Admin/index.html";
       }, 2000);
 
 }
@@ -54,7 +54,7 @@ else{
       toastRef.classList.add("fade", "show");
 
       setTimeout(() => {
-        location.href = "/Admin/AddProduct.html";
+        location.href = "/E-Commerce-WebSite/Admin/AddProduct.html";
         toastRef.classList.remove("fade", "show");
       }, 2000);
       

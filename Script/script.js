@@ -94,15 +94,15 @@ window.addEventListener("load", () => {
   if (!localStorage.getItem("users")) {
     localStorage.setItem("users", JSON.stringify(validUsers));
   }
-  if (location.pathname === "/Admin/index.html") {
+  if (location.pathname === "/E-Commerce-WebSite/Admin/index.html") {
     loadAdminIndex();
   }
 
-  if (location.pathname === "/Admin/orders.html") {
+  if (location.pathname === "/E-Commerce-WebSite/Admin/orders.html") {
     loadAdminOrders();
   }
 
-  if (location.pathname === "/Admin/AddProduct.html") {
+  if (location.pathname === "/E-Commerce-WebSite/Admin/AddProduct.html") {
     let params = new URL(document.location).searchParams;
     let productId = params.get("id");
     if (productId) {
@@ -114,21 +114,21 @@ window.addEventListener("load", () => {
     }
   }
 
-  if (location.pathname === "/User/index.html") {
+  if (location.pathname === "/E-Commerce-WebSite/User/index.html") {
     loadUserIndex();
   }
 
-  if (location.pathname === "/User/cart.html") {
+  if (location.pathname === "/E-Commerce-WebSite/User/cart.html") {
     loadUserCart();
   }
 
-  if (location.pathname === "/User/order.html") {
+  if (location.pathname === "/E-Commerce-WebSite/User/order.html") {
     loadUserOrder();
   }
   if (
-    location.pathname === "/User/order.html" ||
-    location.pathname === "/User/cart.html" ||
-    location.pathname === "/User/index.html"
+    location.pathname === "/E-Commerce-WebSite/User/order.html" ||
+    location.pathname === "/E-Commerce-WebSite/User/cart.html" ||
+    location.pathname === "/E-Commerce-WebSite/User/index.html"
   ) {
     updateCartCount();
   }
@@ -175,6 +175,6 @@ const populateProduct = (product) => {
 // user singout handler
 const SignOut = () => {
   sessionStorage.removeItem('userId');
-  location.replace("/Login/login.html");
+  location.replace("/E-Commerce-WebSite/Login/login.html");
 };
 

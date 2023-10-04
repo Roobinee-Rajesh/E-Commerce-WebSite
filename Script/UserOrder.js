@@ -31,10 +31,10 @@ const loadUserOrder = () => {
         }
         tableRef.innerHTML = body;
       } else {
-        location.href = "/User/index.html";
+        location.href = "/E-Commerce-WebSite/User/index.html";
       }
     } else {
-      location.href = "/Login/login.html";
+      location.href = "/E-Commerce-WebSite/Login/login.html";
     }
   };
   

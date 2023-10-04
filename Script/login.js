@@ -22,8 +22,8 @@ if (btnRef) {
       } else {
         sessionStorage.setItem("userId", loggedInUser.id);
         if (emailRef.value === "admin@gmail.com")
-          location.replace("/Admin/index.html");
-        else location.replace("/User/index.html");
+          location.replace("/E-Commerce-WebSite/Admin/index.html");
+        else location.replace("/E-Commerce-WebSite/User/index.html");
       }
     } else {
       if (emailRef.value.length === 0 && passwordRef.value.length === 0)

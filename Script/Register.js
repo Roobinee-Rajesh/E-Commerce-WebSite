@@ -34,7 +34,7 @@ if (createButtonRef) {
           });
 
           localStorage.setItem("users", JSON.stringify(users));
-          location.href = "/Login/login.html";
+          location.href = "/E-Commerce-WebSite/Login/login.html";
         } else {
           error3Ref.innerText = "Password mismatch!!!";
         }

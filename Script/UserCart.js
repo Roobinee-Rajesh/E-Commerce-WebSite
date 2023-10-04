@@ -4,7 +4,7 @@ const addToCart = (id) => {
   const product = products.find((product) => product.id === parseInt(id));
 
   if (!sessionStorage.getItem("userId")) {
-    location.href = "/Login/login.html";
+    location.href = "/E-Commerce-WebSite/Login/login.html";
   } else {
     let userId = parseInt(sessionStorage.getItem("userId"));
     let cart = [];
@@ -49,7 +49,7 @@ const updateCartCount = () => {
         cartCountRef.innerText = `Cart - ${cartCount}`;
       } else cartCountRef.innerText = `Cart`;
     }
-  } else location.href = "/Login/login.html";
+  } else location.href = "/E-Commerce-WebSite/Login/login.html";
 };
 
 // loadCartPage
@@ -87,7 +87,7 @@ const loadUserCart = () => {
       totalRef.innerText = `Total - ₹ ${total}`;
     } }
     else {
-      location.href = "/Login/login.html";
+      location.href = "/E-Commerce-WebSite/Login/login.html";
     }
   }
 };
@@ -115,11 +115,11 @@ const checkOut = () => {
       localStorage.setItem("cart", JSON.stringify(otherUserCart));
       localStorage.setItem("orders", JSON.stringify(orders));
       updateCartCount();
-      location.href = "/User/index.html";
+      location.href = "/E-Commerce-WebSite/User/index.html";
     } else {
-      location.href = "/User/index.html";
+      location.href = "/E-Commerce-WebSite/User/index.html";
     }
   } else {
-    location.href = "/Login/login.html";
+    location.href = "/E-Commerce-WebSite/Login/login.html";
   }
 };

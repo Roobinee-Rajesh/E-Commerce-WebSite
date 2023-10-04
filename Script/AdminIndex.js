@@ -38,6 +38,6 @@ const deleteProduct = (id) => {
 
   // edit product - admin page
 const editProduct = (id) => {
-  location.href = `/Admin/AddProduct.html?id=${id}`;
+  location.href = `/E-Commerce-WebSite/Admin/AddProduct.html?id=${id}`;
 };
 
