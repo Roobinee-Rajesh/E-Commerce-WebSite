@@ -83,6 +83,6 @@ a{
 }
 
 #error, #error1, #error2,#error3{
-    color: red;
+    color: rgba(255, 0, 0, 0.888);
     margin-left: 10%;
 }
