@@ -11,7 +11,7 @@ const loadUserIndex = () => {
       style="background-color:white"
         class="border rounded p-2 bg-primary-subtle border-primary-subtle w-100 d-flex flex-column mh-75"
       >
-        <img src="${product.thumbnail}" alt="image" style="min-width:200px;height:200px" />
+        <img src="${product.thumbnail}" alt="image" style="min-width:200px;height:200px" class="card-img-top h-25 w-100" />
         <p class="fs-5 my-1 mt-2 text-center">${product.title}</p>
         <p class="fs-4 my-1 mb-2 text-center">₹ ${product.price}</p>
         <button class="btn btn-success" onClick="addToCart(${product.id})">Add to Cart</button>
